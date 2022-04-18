@@ -3,7 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  Answer ({Key? key}) : super(key: key);
+
+  final String title;
+
+  Answer ({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +15,7 @@ class Answer extends StatelessWidget {
         horizontal: 50.0,
         vertical: 5.0,
       ),
+      padding: const EdgeInsets.all(10.0),
       width: double.infinity,
       decoration: BoxDecoration(
         boxShadow: [BoxShadow(
@@ -29,8 +33,13 @@ class Answer extends StatelessWidget {
           ]
         ),
       ),
-      child: Text('answer',
+      child: Text(
+      title,
       textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 16.0,
+          color: Colors.white,
+        ),
       ),
 
     );

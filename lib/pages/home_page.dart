@@ -37,10 +37,16 @@ class _HomePageState extends State<HomePage> {
               style: Theme.of(context).textTheme.caption,
             ),
           ),
-          Answer(),
-          Answer(),
-          Answer(),
-          Answer(),
+
+        ...data.questions[_questionIndex].answers.map(
+            (value) => Answer(title: value['answer'],)
+        ).toList(),
+
+        ElevatedButton(
+            onPressed: () => setState(() => _questionIndex++),
+          child: Text('Next'),
+        ),
+
         ],
       ),
           ),
