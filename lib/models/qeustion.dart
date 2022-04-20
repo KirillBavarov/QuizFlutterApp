@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 
 class Question {
   final String title;
-  final List<Map> answers;
+  final List <Map> answers;
 
   Question({
-    required this.title,
-    required this.answers,
+     required this.title,
+     required this.answers,
 });
 
 }
@@ -19,10 +19,10 @@ class QuestionData {
         answers: [
           {'answer' : 'Yes'},
           {'answer' : 'No'},
-          {'anser' : 'maybe'},
-          {'answer' : 'i dont know'}
+          {'answer' : 'maybe'},
+          {'answer' : 'i dont know'},
         ]),
-    Question(title: 'Youe liked anime?',
+    Question(title: 'Your liked anime?',
         answers: [
           {'answer' : 'Yes'},
           {'answer' : 'No'},
