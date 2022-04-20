@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quizzflutterproject/models/qeustion.dart';
 import 'package:quizzflutterproject/widgets/answers.dart';
 import 'package:quizzflutterproject/widgets/progress_bar.dart';
+import 'package:quizzflutterproject/widgets/quizz.dart';
+import 'package:quizzflutterproject/widgets/result_quizz.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -57,21 +60,18 @@ class _HomePageState extends State<HomePage> {
             total: data.questions.length,
           ),
 
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: Text (
-                data.questions[_questionIndex].title,
-              style: Theme.of(context).textTheme.caption,
-            ),
-          ),
-
-        ...data.questions[_questionIndex].answers.map(
-            (value) => Answer(
-              title: value['answer'],
-              onChangeAnswer: _onChangeAnswer,
-              isCorrect: value.containsKey('isCorrect') ? true : false)
-        ).toList(),
-
+          _questionIndex < data.questions.length
+          ? Quiz(
+            index: _questionIndex,
+            qustionData: data,
+            onChangeAnswer: _onChangeAnswer,
+          )
+              : Result(
+              count: _countResult,
+              total: data.questions.length,
+              onClearState: _clearState,
+          )
+              
         ],
       ),
           ),

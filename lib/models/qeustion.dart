@@ -34,6 +34,7 @@ class QuestionData {
           {'answer' : 'less than 10 anime'},
           {'answer' : 'less than 100 anime'},
           {'answer' : 'over than 100 anime'},
+          {'answer' : 'all'},
         ]),
   ];
 

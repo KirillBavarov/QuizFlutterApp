@@ -40,7 +40,7 @@ class Answer extends StatelessWidget {
               Color(0xFF55337ff),
               Color(0xFF8131ff),
               Color(0xFFbd27ff),
-            ]
+            ],
           ),
         ),
         child: Text(
